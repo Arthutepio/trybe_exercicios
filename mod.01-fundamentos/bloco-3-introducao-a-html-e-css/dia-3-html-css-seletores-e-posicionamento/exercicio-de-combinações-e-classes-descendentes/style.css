@@ -1,0 +1,51 @@
+.corDeFundo {
+    background-color: yellow;
+}
+
+ol li:nth-of-type(even) {
+    color: green;
+}
+ol li:nth-of-type(odd) {
+    text-transform: uppercase;
+}
+h1, h2 {
+    color: red;
+}
+h1 em, h2 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
+li {
+    font-size: 20px;
+}
+li em {
+    font-weight: bold;
+}
+#list li:not(:nth-child(n+4)){
+    color: blue;
+}
+.rosa {
+    background-color: pink;
+}
+#fontBold li a:hover {
+ 
+    font-weight: bold;
+}
+#fontBold li a[href*="stackoverflow"] {
+    color: orange;
+  }
+  
+  #fontBold li a[href*="w3schools"] {
+    color: green;
+  }
+  
+  #fontBold li a[href*="mozilla"] {
+    color: black;
+  }
+  
+  #fontBold li a[href*="devdocs"] {
+    color: yellow;
+  }
+  #fontBold li a[href*="trybe"] {
+    color: green;
+  }
