@@ -156,3 +156,41 @@ if ((number1 + number2 + number3) % 2 === 0){
 
 
 //10.Escreva um programa que se inicie com dois valores em duas constantes diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
+const custo = 1;
+const venda = 2;
+let custoTotal = custo * 1.2;
+
+if( custo >= 0 && venda >= 0){
+    
+    let lucro = (venda - custoTotal) * 1000;
+    console.log("Total do lucro: " + lucro)  
+} else {
+    console.log("Erro, digite um valor válido.")
+}
+
+
+//10.Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
+const salario = 10000;
+let aliquota;
+let ir;
+if (salario <= 1556.94){
+    aliquota = salario * 0.08;
+} else if (salario <= 2594.92){
+    aliquota = salario * 0.09;
+} else if (salario <= 5189.82){
+    aliquota = salario * 0.11;
+} else {
+    aliquota = 570.88
+}
+console.log("Valor do INSS: " + aliquota);
+
+if (salario < 1903.98){
+    ir = (salario - aliquota) *0.75;
+} else if (salario <= 2594.92){
+    aliquota = salario * 0.09;
+} else if (salario <= 5189.82){
+    aliquota = salario * 0.11;
+} else {
+    aliquota = 570.88
+}
+console.log("Valor do INSS: " + aliquota);
