@@ -1,5 +1,5 @@
 //Leia atentamente os enunciados e faça o que se pede! Iremos utilizar esse array para realizar os exercícios do 1 ao 7:
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 //1.Nesse primeiro exercício, percorra o array imprimindo todos os valores nele contidos com a função console.log();
 // for (let index = 0; index < numbers.length; index += 1){
@@ -82,7 +82,68 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 //8.Utilizando for, crie um array que vá de 1 até 25 e imprima o resultado;
 
+// let numeros = [];
+
+// for (let index = 0; index < 25; index += 1){
+//      numeros.push(index + 1);
+    
+// }
+// console.log(numeros)
 
 
 
+//9.Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2.
+// let numeros = [];
+// let divisao = [];
+// for (let index = 0; index < 25; index += 1){
+//     numeros.push(index + 1);
+//     divisao.push(numeros[index] / 2);      
+// }
+// console.log(divisao);
 
+
+//MUITO FELIZ POR TER CONSEGUIDO !!!!!!!!!!!
+
+
+//BÔNUS
+//1.Ordene o array numbers em ordem crescente e imprima seus valores;
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+// for (let index = 1; index < numbers.length; index += 1) {
+//     for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+//       if (numbers[index] < numbers[secondIndex]) {
+//         let position = numbers[index];
+//         numbers[index] = numbers[secondIndex];
+//         numbers[secondIndex] = position;
+//       }
+//     }
+//   }
+//   console.log(numbers);
+
+
+
+//2.Ordene o array numbers em ordem decrescente e imprima seus valores;
+
+// for (let index = 1; index < numbers.length; index += 1) {
+//     for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+//       if (numbers[index] > numbers[secondIndex]) {
+//         let position = numbers[index];
+//         numbers[index] = numbers[secondIndex];
+//         numbers[secondIndex] = position;
+//       }
+//     }
+//   }
+//   console.log(numbers);
+let resultado = [];
+
+for (let index = 0; index < numbers.length; index += 1){
+    if (index + 1 < numbers.length){
+        resultado.push(numbers[index] * numbers[index +1]);
+    } else {
+        resultado.push(numbers[index] * 2);
+    }
+
+    
+}
+console.log(resultado);
