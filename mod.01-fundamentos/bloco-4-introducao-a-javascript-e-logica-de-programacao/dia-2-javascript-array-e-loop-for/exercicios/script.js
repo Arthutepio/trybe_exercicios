@@ -1,105 +1,83 @@
 //Leia atentamente os enunciados e faça o que se pede! Iremos utilizar esse array para realizar os exercícios do 1 ao 7:
 // let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-
 //1.Nesse primeiro exercício, percorra o array imprimindo todos os valores nele contidos com a função console.log();
-// for (let index = 0; index < numbers.length; index += 1){
+// for(let index = 0; index < numbers.length; index += 1){
 //     console.log(numbers[index]);
 // }
 
-
 //2.Para o segundo exercício, some todos os valores contidos no array e imprima o resultado;
 // let soma = 0;
-// for (let index = 0; index < numbers.length; index += 1){
-//     soma += numbers[index];   
+// for(let index = 0; index < numbers.length; index +=1){
+//     soma = soma + numbers[index];// pode ser escrito apenas 'soma += array[index]'
 // }
 // console.log(soma);
-
-
+ 
 //3.Para o terceiro exercício, calcule e imprima a média aritmética dos valores contidos no array;
 // let soma = 0;
-// let media = 0;
-// for (let index = 0; index < numbers.length; index += 1){
+// for(let index = 0; index < numbers.length; index +=1){
 //     soma += numbers[index];
-//     media = soma / numbers.length;
 // }
-// console.log(media);
-
-
+// console.log(soma / numbers.length);
 
 //4.Com o mesmo código do exercício anterior, caso o valor final seja maior que 20, imprima a mensagem: "valor maior que 20". Caso não seja, imprima a mensagem: "valor menor ou igual a 20";
-// let soma = 0;
-// let media = 0;
-// for (let index = 0; index < numbers.length; index += 1){
-//     soma += numbers[index];
-//     media = soma / numbers.length;
-    
-// } 
-// if (media > 20){
-//     console.log("Valor maoir do que 20");
-// } else {
-//     console.log("Valor menor ou igual a 20");
+// let result =0;
+// for(let i = 0; i < numbers.length; i +=1){
+//     result += numbers[i];
 // }
-
-
+// console.log('A soma total do array é: ' + result);
+// let media = result / numbers.length;
+// console.log('A média é: ' + media);
+// if(media > 20){
+//     console.log("valor maior que 20");
+// } else{
+//     console.log("valor menor ou igual a 20");
+// }
 
 //5.Utilizando for, descubra qual o maior valor contido no array e imprima-o;
-// let numeroMaior = numbers[0];
-// for (let index = 1; index < numbers.length; index += 1){
-//     if (numbers[index] > numeroMaior){
-//         numeroMaior = numbers[index];
+// let maiorElemento = numbers[0];// já declaro o primeiro indice como sendo o maior
+// for (let index = 1; index < numbers.length; index+=1) {
+//     if(numbers[index] > maiorElemento){
+//         maiorElemento = numbers[index]
 //     }
 // }
-// console.log(numeroMaior);
-
-
-
+// console.log(maiorElemento);
 
 //6.Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
-// let impar = 0;
-// for (let index = 0; index < numbers.length; index += 1){
-//     if (numbers[index] % 2 !== 0){
-//         impar += 1;//para saber quantos números ímpares tenho que incrementar a cada loop +1
+// let impar = [];
+// for (let index = 0; index < numbers.length; index+=1) {
+//     if(numbers[index] % 2 !== 0){
+//         impar.push(numbers[index]);
+//     }    
+// }
+//     if(impar.length === 0){
+//         console.log("nenhum valor ímpar encontrado");
+//     }else{
+//         console.log(impar);
 //     }
-// }
-//     if  (impar === 0){//o 0(zero) representa qualquer número que seja par
-//         console.log("nenhum valor ímpar encontrado")
-//     } else {
-//         console.log(impar)
-// }
-
-
-
 //7.Utilizando for, descubra qual o menor valor contido no array e imprima-o;
-// let menorNumero = numbers[0];
-// for (let index = 1; index < numbers.length; index += 1){
-//     if (numbers[index] < menorNumero){
-//         menorNumero = numbers[index];
+// let menorElemento = numbers[0];
+// for (let index = 1; index < numbers.length; index+=1) {
+//     if( numbers[index] < menorElemento){
+//         menorElemento = numbers[index];
 //     }
-// }
-// console.log(menorNumero);
-
-
+// }console.log(menorElemento);
 
 //8.Utilizando for, crie um array que vá de 1 até 25 e imprima o resultado;
-
-// let numeros = [];
-
-// for (let index = 0; index < 25; index += 1){
-//      numeros.push(index + 1);
-    
-// }
-// console.log(numeros)
-
-
+// let array = [];
+// for(let index = 1; index <= 25; index +=1){
+//     array.push(index);
+// }console.log(array);
 
 //9.Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2.
-// let numeros = [];
-// let divisao = [];
-// for (let index = 0; index < 25; index += 1){
-//     numeros.push(index + 1);
-//     divisao.push(numeros[index] / 2);      
+// let array = [];
+// for(let index = 1; index <= 25; index +=1){
+//     array.push(index);
 // }
-// console.log(divisao);
+// for (let index = 0; index < array.length; index+=1) {
+//     console.log(array[index] / 2);
+    
+// }
+
 
 
 //MUITO FELIZ POR TER CONSEGUIDO !!!!!!!!!!!
