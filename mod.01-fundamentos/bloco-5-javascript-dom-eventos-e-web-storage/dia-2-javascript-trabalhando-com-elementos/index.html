@@ -106,14 +106,21 @@
     //  1. 🚀 Adicione a classe title na tag h1 criada;
     tagH1.className = 'title';
     //  2. 🚀 Adicione a classe description nas 3 tags h3 criadas;
-    
+        let pegaTagH3 = document.getElementsByTagName('h3')
+        for (let index = 0; index < 3; index += 1){
+        pegaTagH3[index].className = 'description';
+    }
     //  3. 🚀 Remova a section criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild();
-    
+        let pegaSection2 = document.getElementsByClassName('left-content')[0];
+        tagMain.removeChild(pegaSection2);
     //  4. 🚀 Centralize a section criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto da section;
-    
-    //  5. 🚀 Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
-    
+        let pegaSection3 = document.getElementsByClassName('right-content')[0];
+        pegaSection3.style.marginRight ='auto';
+    //  5. 🚀 Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela  possui a classe center-content) para a cor verde;
+        let changeColor = document.getElementsByClassName('center-content')[0];
+        changeColor.parentNode.style.backgroundColor = 'green'
     //  6. 🚀 Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+        
 
         
     </script>
