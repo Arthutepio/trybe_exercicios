@@ -42,7 +42,7 @@
             <!-- <label for="areaText">
                     <input type="text" name="test1" id="areaText" maxlength="500" placeholder="Digite sua resposta" class="itemContainer">
                 </label> -->
-                <textarea name="" id="" cols="30" rows="10" maxlength="500" placeholder="Digite sua resposta" ></textarea>
+                <textarea name="resposta" id="resposta" cols="30" rows="10" maxlength="500" placeholder="Digite sua resposta" ></textarea>
             </div>
                 <h3 class="itemContainer">Qual a melhor data para realizar a viagem</h3>
             <div>
@@ -54,13 +54,13 @@
                 <label for="checkbox-1">
                     <input type="checkbox" name="input-checkbox-1" id="checkbox-1"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
                 </label><br>
-                <label for="checkbox-2">
-                    <input type="checkbox" name="input-checkbox-2" id="checkbox-2"> Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+                <label for="checkbox2">
+                    <input type="checkbox" name="input-checkbox2" id="checkbox2" required> Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
                 </label> 
             </div>   
         </fieldset>
         
-        <button type="submit" id="submit-btn" class="btn">Enviar</button>
+        <button type="submit" id="submit-btn" class="btn" disabled>Enviar</button>
         <button type="submit" id="clear-btn" class="btn">Limpar</button>
         
     </form>
