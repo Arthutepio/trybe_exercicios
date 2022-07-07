@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<header>
+    <h1>Preencha o formulário</h1>
+</header>
+<body>
+    <form action="" method="get">
+        <fieldset id="container">
+            <label for="nome">
+                Nome:
+                <input type="text" name="input-nome" id="nome" class="itemContainer" minlength="10" maxlength="40">
+            </label><br>
+            <label for="email" >
+                Email:
+                <input type="email" name="input-email" id="email" class="itemContainer" inlength="10" maxlength="50">
+            </label><br>
+            <h3 class="itemContainer">Marque o destino favorito</h3>
+            <div class="itemContainer">    
+                <label for="destino-1" >      
+                    <input type="radio" name="input-destino" id="destino-1" value="Cid"> Cidade
+                </label>
+                <label for="destino-2" >
+                    
+                    <input type="radio" name="input-destino" id="destino-2" value="Cam"> Campo
+                </label><label for="destino-3" >
+                    
+                    <input type="radio" name="input-destino" id="destino-3" value="Pra"> Praia
+                </label><label for="destino-4" >
+                
+                    <input type="radio" name="input-destino" id="destino-4" value="Mon"> Montanha
+                </label>
+            </div>
+                <h3 class="itemContainer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</h3>
+            <div>
+            <!-- <label for="areaText">
+                    <input type="text" name="test1" id="areaText" maxlength="500" placeholder="Digite sua resposta" class="itemContainer">
+                </label> -->
+                <textarea name="resposta" id="resposta" cols="30" rows="10" maxlength="500" placeholder="Digite sua resposta" ></textarea>
+            </div>
+                <h3 class="itemContainer">Qual a melhor data para realizar a viagem</h3>
+            <div>
+                <label for="date">
+                    Data:
+                    <input type="date" name="input-date" id="date" class="itemContainer">
+                </label>
+            </div>
+                <label for="checkbox-1">
+                    <input type="checkbox" name="input-checkbox-1" id="checkbox-1"> Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+                </label><br>
+                <label for="checkbox2">
+                    <input type="checkbox" name="input-checkbox2" id="checkbox2" required> Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+                </label> 
+            </div>   
+        </fieldset>
+        
+        <button type="submit" id="submit-btn" class="btn" disabled>Enviar</button>
+        <button type="submit" id="clear-btn" class="btn">Limpar</button>
+        
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
