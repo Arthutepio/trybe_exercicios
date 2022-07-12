@@ -11,7 +11,9 @@
   }
   
   body {
-  
+    font-size: 1.3em;
+    /* font: 1.2em/1.2 Helvetica, aria, sans-serif; - Usamos a propriedade font, que é um shorthand para utilizarmos font-size e font-family em uma só linha.*/
+    margin: 5%;
   }
   
   article {
@@ -19,11 +21,11 @@
   }
   
   h1 {
-  
+    font-size: 1.5em;
+    margin: .9em 0 0 0;
   }
   
   h2 {
-  
   }
   
   img {
@@ -40,8 +42,29 @@
   
   figure {
       margin: 0;
+
   }
   
   figcaption {
     font-size: .8em;
+  }
+
+  @media screen and (min-width: 500px){
+    body{
+        background-color: red;
+        margin: 25px 6%;
+        font-size: 2.5em;
+
+    }
+
+
+  }
+
+  @media screen and (min-width: 1200px){
+    body{
+        background-color: aquamarine;
+        margin: 30px 10%;
+        max-width: 1300px;
+       
+    }
   }
