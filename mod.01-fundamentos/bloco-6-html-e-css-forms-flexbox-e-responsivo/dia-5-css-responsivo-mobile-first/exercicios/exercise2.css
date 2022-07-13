@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .corP{
+    border: 1px solid;
+  }
+  .corV{
+    border: 1px solid red;
+  }
+
+  body {
+    background-color: rgb(227, 252, 243);
+    font-size: 1.em;
+    margin: 5%;
+  }
+
+  header p {
+    font-size: 1.5em;
+    padding: 10%;
+    color: rgb(94, 10, 172);
+    text-align: center;
+  }
+
+  header nav ul{
+    display: none;
+  }
+
+  @media screen and (min-width: 500px){
+    body{
+        font-size: 1.3em;
+    }
+  }
+    
+    header p {
+        font-size: 2.5em;
+    }
+
+    header nav ul{
+        font-size: 1.2em;
+        width: 300px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    };
+
+  
+  
+
+  @media screen and (min-width: 800px){
+    body{
+        font-size: 1.5em;
+        
+    }
+
+    header p {
+        font-size: 3.5em;
+    }
+
+    header nav ul{
+        display: flex;
+        justify-content: first baseline;
+        
+    };
+
+    
+  }
+
