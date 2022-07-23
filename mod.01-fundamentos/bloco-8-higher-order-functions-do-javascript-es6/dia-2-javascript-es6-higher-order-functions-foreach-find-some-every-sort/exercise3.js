@@ -76,7 +76,12 @@ const books = [
   
   function getNamedBook() {
     // escreva seu código aqui
-    const firstBook = (book) => book.name.length === 26;
+    const firstBook = (book) => {
+        if (book.name.length === 26) {
+            console.log(`O livro que possui 26 letras é o ${book.name}`);
+        };
+    }
     return books.find(firstBook);
 }
-console.log(getNamedBook());
+// console.log(getNamedBook());
+getNamedBook()
