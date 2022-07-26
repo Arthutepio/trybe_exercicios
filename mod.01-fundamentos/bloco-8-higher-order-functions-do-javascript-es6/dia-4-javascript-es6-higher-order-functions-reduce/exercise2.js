@@ -63,3 +63,10 @@ const books = [
   
   // Adicione o código do exercício aqui:
   //2 - Crie uma string com os nomes de todas as pessoas autoras.
+  const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+
+function reduceNames() {
+  // escreva seu código aqui
+  return books.map((book) => book.author.name).reduce((acc, val) => acc.concat(val), "") + '.';
+}
+console.log(reduceNames());
