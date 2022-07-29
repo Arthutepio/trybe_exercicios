@@ -62,16 +62,27 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  // 🚀 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
-  const expectedResult = [
-    'O Senhor dos Anéis',
-    'Fundação',
-    'O Chamado de Cthulhu',
-  ];
-  const data = new Date();
-//   const ano = data.getFullYear();
-  function oldBooks() {
-    const livrosMaisDe60 = books.filter((book) => data.getFullYear() - book.releaseYear >= 60)
-        return livrosMaisDe60.map((nome) => nome.name);       
-  } 
-  console.log(oldBooks(books));
+  // 🚀 7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
+  const expectedResult = 'O Senhor dos Anéis';
+
+// function authorWith3DotsOnName() {
+//   return books.filter((book) => (book.author.name[1] === '.' 
+//   && book.author.name[4] === '.' && book.author.name[7] === '.')).map((nome) => nome.name)[0];
+  
+// }
+// console.log(authorWith3DotsOnName(books));
+
+// function authorWith3DotsOnName() {
+//   const test = books.map((book) => book.author.name).map((nome) => nome.split(" ")).endsWith('.');
+//   return test.endsWith('.');
+  
+// }
+// console.log(authorWith3DotsOnName(books));
+
+
+
+// outra maneira de resolver
+function authorWith3DotsOnName() {
+    return books.find((book) => book.author.name.split(' ').filter((nome) => nome.endsWith('.')).length === 3).name;
+  }//endsWith() indica se uma string termina com determinados caracteres, retornando true ou false.
+  console.log(authorWith3DotsOnName(books));

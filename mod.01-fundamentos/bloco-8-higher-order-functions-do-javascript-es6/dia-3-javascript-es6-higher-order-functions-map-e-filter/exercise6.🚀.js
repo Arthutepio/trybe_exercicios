@@ -62,34 +62,15 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-  //🚀 4 - Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
+  // 🚀 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
   const expectedResult = [
-    {
-      id: 6,
-      name: 'O Chamado de Cthulhu',
-      genre: 'Terror',
-      author: { name: 'H. P. Lovecraft', birthYear: 1890 },
-      releaseYear: 1928,
-    },
-    {
-      id: 3,
-      name: 'Fundação',
-      genre: 'Ficção Científica',
-      author: { name: 'Isaac Asimov', birthYear: 1920 },
-      releaseYear: 1951,
-    },
-    {
-      id: 2,
-      name: 'O Senhor dos Anéis',
-      genre: 'Fantasia',
-      author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
-      releaseYear: 1954,
-    },
+    'O Senhor dos Anéis',
+    'Fundação',
+    'O Chamado de Cthulhu',
   ];
-  
-  function oldBooksOrdered() {
-    const filtrados = books.filter((book) => book.releaseYear < 1962);
-    filtrados.sort((a, b) => a.releaseYear - b. releaseYear);
-    return filtrados;    
-  }
-  console.log(oldBooksOrdered(books));
+  const data = new Date();
+//   const ano = data.getFullYear();
+  function oldBooks() {
+    return books.filter((book) => data.getFullYear() - book.releaseYear >= 60).map((nome) => nome.name);       
+  } 
+  console.log(oldBooks(books));
