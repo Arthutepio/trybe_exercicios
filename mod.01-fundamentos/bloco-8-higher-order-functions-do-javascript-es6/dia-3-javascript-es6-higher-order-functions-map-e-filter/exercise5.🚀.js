@@ -62,13 +62,16 @@ const books = [
   ];
   
   // Adicione o código do exercício aqui:
-//🚀 5 - Faça uma função que retorne true, se todas as pessoas autoras nasceram no século XX, ou false, caso contrário.
-const expectedResult = false;
-
-function everyoneWasBornOnSecXX() {
-  // escreva seu código aqui
-    
-    return books.every((ano) => ano.author.birthYear > 1900 && ano.author.birthYear <= 2000);
-};
-console.log(everyoneWasBornOnSecXX());
-
+  // 🚀 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+  const expectedResult = [
+    'Frank Herbert',
+    'George R. R. Martin',
+    'Isaac Asimov',
+    'J. R. R. Tolkien',
+  ];
+  
+  function fantasyOrScienceFictionAuthors() {
+    return books.filter((book) => book.genre.includes('Fantasia') || book.genre.includes('Ficção Científica'))
+    .map((nome) => nome.author.name).sort();
+    }  
+  console.log(fantasyOrScienceFictionAuthors());
