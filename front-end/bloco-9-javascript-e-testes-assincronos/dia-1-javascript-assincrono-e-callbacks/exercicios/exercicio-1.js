@@ -29,7 +29,7 @@ const jupiter = {
 console.log(planetDistanceFromSun(mars)); // A
 console.log(planetDistanceFromSun(venus)); // B
 console.log(planetDistanceFromSun(jupiter)); // C
-// Resposta:
+// Resposta: A, B e C
 // Mars is 227900000 kilometers apart from the Sun
 // Venus is 108200000 kilometers apart from the Sun
 // Jupiter is 778500000 kilometers apart from the Sun
