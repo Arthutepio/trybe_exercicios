@@ -1,0 +1,11 @@
+FROM 
+
+WORKDIR 
+
+EXPOSE 8080
+
+ADD 
+
+COPY . .
+
+ENTRYPOINT ["npm", "start"]
