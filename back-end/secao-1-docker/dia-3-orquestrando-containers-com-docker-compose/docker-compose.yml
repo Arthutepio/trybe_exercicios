@@ -14,8 +14,18 @@ services:
       database__connection__host: db
       database__connection__user: root
       database__connection__password: password
+    networks:
+      - my-network
+
   db:
     image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
+    networks:
+      - my-network
+  volumes:
+    db-data:
+
+  networks:
+    my-network:
