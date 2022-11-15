@@ -1,0 +1,80 @@
+🚀 Exercício 1:
+
+Vamos aprimorar nossos conhecimentos sobre images e volumes, para isso:
+
+Crie um arquivo HTML chamado missao_trybe.html que tenha a seguinte estrutura:
+
+Tag <title> com o seguinte texto “Trybe”;
+
+Tag <H1> com o seguinte texto “Missão da Trybe”;
+
+Tag <p> com o seguinte texto “Gerar oportunidade para pessoas”;
+
+Salve o arquivo em qualquer lugar da sua máquina com a extensão html
+
+Crie um container para manter um servidor httpd:2.4 Apache e vincule sua porta interna com a porta 4545 da sua máquina local.
+
+Após criar o container acesse a página HTML que está rodando no servidor em seu browser.
+
+Acesse o arquivo missao_trybe.html e acrescente a tag <p> com o seguinte texto “Nosso negócio é GENTE! #VQV”;
+
+Obtenha o id do container httpd:2.4;
+
+Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host;
+
+Agora pare o container httpd:2.4;
+
+Exclua o seu container;
+
+Verifique se a pasta onde você salvo o arquivo html permanece no mesmo lugar;
+
+Obtenha o IMAGE ID do servidor;
+
+Depois de obter o IMAGE ID, exclua a imagem.
+
+🚀 Exercício 2:
+
+Crie o arquivo Compose para subir um ghost blog, essa plataforma é similar com o Wordpress e é utilizada para criar sites de conteúdo. Você pode ler no site oficial como criar conteúdos nele e utilizá-lo. Para esse exercício, utilizaremos apenas sua página de exemplo:
+
+Utilize a versão “3” no arquivo;
+Crie um service para subir a plataforma, utilize a imagem ghost:1-alpine;
+Publique a porta 2368, fazendo bind também para a 2368;
+Suba a aplicação utilizando o docker-compose e então acesse a porta publicada para validar se deu tudo certo.
+🚀 Exercício 3:
+
+Por padrão o ghost utiliza um banco de dados sqlite interno para salvar as informações, porém, vamos alterar esse comportamento para exercitar nossos conhecimentos:
+
+Crie um novo serviço db para o nosso banco de dados:
+
+Podemos utilizar o banco de dados MySQL, utilize a imagem mysql:5.7;
+Precisamos definir uma senha root para o banco, para isso utilize a variável de ambiente MYSQL_ROOT_PASSWORD
+Agora precisamos configurar nosso serviço ghost para utilizar o banco de dados:
+
+Defina o tipo de banco de dados a ser usado pelo ghost definindo a variável de ambiente database__client para mysql;
+Defina o serviço db como servidor do banco de dados na variável de ambiente database__connection__host;
+Defina as credenciais para a conexão com o banco de dados
+Para definir a pessoa usuária (root), utilize a variável de ambiente database__connection__user
+Para definir a senha (a mesma que definimos no nosso serviço db), utilize a variável de ambiente database__connection__password
+Defina o nome ghost para o nome do database no banco de dados utilizando a variável de ambiente database__connection__database;
+Utilize a opção depends_on para criar relações de dependências entre os serviços.
+Suba o ambiente com o novo arquivo usando o docker-compose e então acesse a porta.
+
+Exercício 4:
+
+Agora vamos praticar os conceitos de volumes e networks.
+
+Configure o nosso serviço mysql para utilizar um volume, conforme vimos no conteúdo, utilize o caminho target /var/lib/mysql.
+Ao invés de utilizar a rede padrão criada pelo Compose, defina uma rede chamada my-network para a comunicação dos dois serviços.
+Suba o ambiente com o novo arquivo usando o docker-compose e então acesse-o.
+Exercício 5:
+
+Agora vamos criar um novo arquivo Compose, para rodarmos uma aplicação React, conforme vimos alguns exemplos do conteúdo:
+
+Inicie um novo projeto ReactJS utilizando o create-react-app;
+Crie o Dockerfile, conforme vimos na aula passada;
+Crie um novo arquivo Compose utilizando a versão 3;
+Defina um serviço no arquivo para nosso app, para isso utilize a opção build para apontar para o Dockerfile;
+Publique a porta exposta no Dockerfile fazendo bind para a porta 8080 do localhost;
+Exercício 6:
+
+Para simularmos o processo de desenvolvimento, faça a alteração em alguma parte do código do app react, e então execute o comando para subir o serviço novamente, “rebuildando” a imagem para aplicar as alterações.
