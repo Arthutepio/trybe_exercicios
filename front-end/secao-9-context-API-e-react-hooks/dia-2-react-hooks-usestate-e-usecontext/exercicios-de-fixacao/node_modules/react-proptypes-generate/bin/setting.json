@@ -1,0 +1,16 @@
+{
+  "autoImport": "ES6",
+  "codeStyle": "class",
+  "noMergeOld": false,
+  "mergeOldIfExist": false,
+  "noShape": false,
+  "tabWidth": 2,
+  "quote": null,
+  "trailingComma": false,
+  "semicolon": false,
+  "arrayLike": false,
+  "isRequired": true,
+  "sort": true,
+  "include": [],
+  "exclude": []
+}

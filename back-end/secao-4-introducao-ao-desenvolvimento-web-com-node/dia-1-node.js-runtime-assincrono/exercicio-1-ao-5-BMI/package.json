@@ -1,0 +1,16 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "Exercício 1 🚀 Crie um código para calcular o índice de massa corporal(IMC) de uma pessoa.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "bmi": "node src/bmi.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arthutepio",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

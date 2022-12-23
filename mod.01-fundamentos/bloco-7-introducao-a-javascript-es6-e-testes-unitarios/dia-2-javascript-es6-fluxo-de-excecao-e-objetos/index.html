@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Calculadora</title>
+</head>
+<body>
+  <p>Informe dois números para realizar a soma:</p>
+  <label for='value1'>Valor 1:</label>
+  <input type='text' id='value1'>
+  <label for='value2'>Valor 2:</label>
+  <input type='text' id='value2'>
+  <button id='button'>Somar</button>
+  <p id='result'></p>
+  <script>
+    // function sum() {
+    //   const value1 = document.getElementById('value1').value;
+    //   const value2 = document.getElementById('value2').value;
+    //   const result = Number(value1) + Number(value2);
+    //   document.getElementById('result').innerHTML = `Resultado: ${result}`;
+    //   document.getElementById('value1').value = '';
+    //   document.getElementById('value2').value = '';
+    // }
+    function verifyIsNumber(value1, value2) {
+        if (!value1 || !value2) { // A condição do if só será satisfeita se ao menos um dos campos não tenha sido preenchido
+          throw new Error('Preencha os campos para realizar a soma'); // Lançando erro descritivo
+        }
+        if (isNaN(value1) || isNaN(value2)) { // A condição do if só será satisfeita se ao menos um dos campos não seja um número
+          throw new Error('Informe dois números para realizar a soma'); // Lançando erro descritivo
+        }
+      }
+      function sum() {
+        try {
+          const value1 = document.getElementById('value1').value; // Recupera o valor do input com o id value1
+          const value2 = document.getElementById('value2').value; // Recupera o valor do input com o id value2
+          verifyIsNumber(value1, value2); // Executa a função verifyIsNumber
+          const result = Number(value1) + Number(value2);
+          document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        } catch (error) {
+          document.getElementById('result').innerHTML = `Erro: ${error.message}`;
+        } finally {
+          document.getElementById('value1').value = ''; // Apagar os valores do elemento que possui o id value1
+          document.getElementById('value2').value = ''; // Apagar os valores do elemento que possui o id value2
+        }
+      }
+
+    window.onload = () => {
+      const button = document.getElementById('button');
+      button.addEventListener('click', sum);
+    }
+
+  </script>
+</body>
+</html>

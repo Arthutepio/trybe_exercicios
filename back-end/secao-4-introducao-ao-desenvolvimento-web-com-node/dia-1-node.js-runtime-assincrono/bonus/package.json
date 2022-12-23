@@ -1,0 +1,13 @@
+{
+  "name": "bonus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/fibonacci.js",
+  "scripts": {
+    "start": "node .",
+    "fibonacci": "node src/fibonacci.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
