@@ -1,0 +1,188 @@
+Exercício 1
+Temos uma API que começou a ter diversos erros e apresentar bugs frequentes. Como solução, o CTO do time, avaliou que utilizar o Typescript em suas funções, diminuiria um pouco desses problemas.
+
+Para isso você foi direcionado a modificar as funções abaixo, escritas em Javascript, para que fossem tipadas e executassem sem erros no compilador de Typescript:
+
+Observação: Não é necessário alterar o valor dos parâmetros passados.
+
+Dica: utilize o Typescript playground para testar o comportamento de cada função.
+
+Função 1
+Copiar
+
+const numberInput = 7;
+
+const isItAPrime = (param) => {
+  for (let i = 2; i < param; i++)
+    if (param % i === 0) {
+      return false;
+    }
+  return param > 1;
+};
+
+isItAPrime(numberInput)
+  ? console.log(`${numberInput} é primo`)
+  : console.log(`${numberInput} não é primo`);
+Função 2
+Copiar
+// Essa função é responsável por validar se o formato do e-mail está correto.
+
+const emailInput = 'email@email.com';
+
+const validateEmailFormat = (param) => {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(param);
+};
+
+console.log(validateEmailFormat(emailInput))
+Função 3
+Copiar
+// Essa função recebe uma lista e ordena seu conteúdo de forma crescente.
+
+const numberList = [10, 5, 18, 2, 8, 23];
+
+const sortInput = (param) => {
+  return param.sort(function(a, b){return a-b});
+};
+
+console.log(sortInput(numberList));
+Função 4
+Dica: leia a documentação
+
+Copiar
+// Essa função é responsável por receber um objeto e formar uma frase utilizando as chaves do mesmo.
+const peopleInput = {
+  name: 'Rui',
+  age: 23,
+};
+
+const createSimpleSentence = (param) => {
+  return `Olá, meu nome é ${param.name} e tenho ${param.age} anos.`;
+}
+
+console.log(createSimpleSentence(peopleInput));
+Função 5
+Dica: essa função poderá receber um parâmetro com dois tipos diferentes.
+
+Copiar
+// Essa é uma função que verifica se a idade passada é maior ou menor de 18 anos.
+const ageInput = 15;
+
+const isOfLegalAge = (param) => {
+  return !!param
+}
+
+ageInput >= 18
+  ? console.log(isOfLegalAge('true'))
+  : console.log(isOfLegalAge(false));
+
+  Exercício 2
+Crie um script para converter unidades de medida de comprimento:
+
+Esse script deverá se chamar length.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+valor - number
+unidade base - string
+unidade para a conversão - string
+Tabela de conversão:
+
+Nome	Símbolo	Valor
+Quilômetro	km	1000m
+Hectômetro	hm	100m
+Decâmetro	dam	10m
+Metro	m	1m
+Decímetro	dm	0,1m
+Centímetro	cm	0,01m
+Milímetro	mm	0,001m
+
+Exercício 3
+Crie um script para converter unidades de medida de massa:
+
+Esse script deverá se chamar mass.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+valor - number
+unidade base - string
+unidade para a conversão - string
+Tabela de conversão:
+
+Nome	Símbolo	Valor
+Quilograma	kg	1000g
+Hectograma	hg	100g
+Decagrama	dag	10g
+Grama	g	1g
+Decigrama	dg	0,1g
+Centigrama	cg	0,01g
+Miligrama	mg	0,001g
+
+Exercício 4
+Crie um script para converter unidades de medida de capacidade:
+
+Esse script deverá se chamar capacity.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+valor - number
+unidade base - string
+unidade para a conversão - string
+Tabela de conversão:
+
+Nome	Símbolo	Valor
+Quilolitro	kl	1000l
+Hectolitro	hl	100l
+Decalitro	dal	10l
+Litro	l	1l
+Decilitro	dl	0,1l
+Centilitro	cl	0,01l
+Mililitro	ml	0,001l
+
+
+Exercício 5
+Crie um script para converter unidades de medida de área:
+
+Esse script deverá se chamar area.ts;
+Ele script deverá possuir uma função chamada convert que recebe como parâmetro:
+valor - number
+unidade base - string
+unidade para a conversão - string
+Obs: atente-se à conversão de metros quadrados, que deve ser realizada de 100 em 100.
+
+Tabela de conversão:
+
+Nome	Símbolo	Valor
+Quilômetro quadrado	km²	10⁶ m²
+Hectômetro quadrado	hm²	10⁴ m²
+Decâmetro quadrado	dam²	10² m²
+Metro quadrado	m²	1m²
+Decímetro quadrado	dm²	10⁻² m²
+Centímetro quadrado	cm²	10⁻⁴ m²
+Milímetro quadrado	mm²	10⁻⁶ m²
+
+
+Exercício 6
+Crie um script para converter unidades de medida de volume:
+
+Esse script deverá se chamar volume.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+valor - number
+unidade base - string
+unidade para a conversão - string
+Obs: atente-se à conversão de metros cúbicos, que deve ser realizada de 1000 em 1000.
+
+Tabela de conversão:
+
+Nome	Símbolo	Valor
+Quilômetro cúbico	km³	10⁹ m³
+Hectômetro cúbico	hm³	10⁶ m³
+Decâmetro cúbico	dam³	10³ m³
+Metro cúbico	m³	1m³
+Decímetro cúbico	dm³	10⁻³ m³
+Centímetro cúbico	cm³	10⁻⁶ m³
+Milímetro cúbico	mm³	10⁻⁹ m³
+
+Exercício 7
+Vamos tornar nossos scripts de unidades de medida mais interativos! Vamos adicionar input de quem usa o script. Para isso, utilize o pacote readline-sync, documentação.
+
+Em cada script, crie uma função chamada exec que:
+
+Capta as entradas da pessoa usuária via terminal;
+Chama a função de conversão passando as entradas da pessoa usuária como parâmetro;
+Exibe uma mensagem com o resultado. Ex: “1km é igual a 1000m.”;
+Não se esqueça de chamar a função exec(); ao final do script.
