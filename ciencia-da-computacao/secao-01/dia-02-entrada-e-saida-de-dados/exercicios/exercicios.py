@@ -68,41 +68,98 @@
 # Exercício 3:
 # Modifique o exercício anterior para que as palavras sejam lidas de um
 # arquivo. Considere que o arquivo terá cada palavra em uma linha.
-import random
+# import random
 
 
-MAX_ATTEMPTS = 3
+# MAX_ATTEMPTS = 3
 
 
-def retrieve_words(file):
-    return [word.strip() for word in file]
+# def retrieve_words(file):
+#     return [word.strip() for word in file]
 
 
-def draw_secret_word(words):
-    secret_word = random.choice(words)
-    scrambled_word = "".join(random.sample(secret_word, len(secret_word)))
-    return secret_word, scrambled_word
+# def draw_secret_word(words):
+#     secret_word = random.choice(words)
+#     scrambled_word = "".join(random.sample(secret_word, len(secret_word)))
+#     return secret_word, scrambled_word
 
 
-def collect_guesses():
-    guesses = []
-    for attempt in range(MAX_ATTEMPTS):
-        guess = input("Guess the word: ")
-        guesses.append(guess)
-    return guesses
+# def collect_guesses():
+#     guesses = []
+#     for attempt in range(MAX_ATTEMPTS):
+#         guess = input("Guess the word: ")
+#         guesses.append(guess)
+#     return guesses
 
 
-def check_game_result(secret_word, guesses):
-    if secret_word in guesses:
-        print(f"You win: the secret word is {secret_word}")
-    else:
-        print(f"You lose: the secret word is {secret_word}")
+# def check_game_result(secret_word, guesses):
+#     if secret_word in guesses:
+#         print(f"You win: the secret word is {secret_word}")
+#     else:
+#         print(f"You lose: the secret word is {secret_word}")
+
+
+# if __name__ == "__main__":
+#     with open("words.txt") as file:
+#         words = retrieve_words(file)
+#     secret_word, scrambled_word = draw_secret_word(words)
+#     print(f"Scrambled word is {scrambled_word}")
+#     guesses = collect_guesses()
+#     check_game_result(secret_word, guesses)
+
+
+# ===================================================
+# 🚀 Exercício 4:
+# Dado o arquivo.json, leia seu conteúdo e calcule a
+# porcentagem de livros em cada categoria em relação ao número total de livros.
+# O resultado deve ser escrito em um arquivo no formato CSV
+import json
+import csv
+
+
+def retrieve_books(file):
+    return json.load(file)
+
+
+def count_books_by_categories(books):
+    categories = {}
+    for book in books:
+        for category in book["categories"]:
+            if not categories.get(category):
+                categories[category] = 0
+            categories[category] += 1
+    return categories
+
+
+def calculate_percentage_by_category(book_count_by_category, total_books):
+    return [
+        [category, num_books / total_books]
+        for category, num_books in book_count_by_category.items()
+    ]
+
+
+def write_csv_report(file, header, rows):
+    writer = csv.writer(file)
+    writer.writerow(header)
+    writer.writerows(rows)
 
 
 if __name__ == "__main__":
-    with open("words.txt") as file:
-        words = retrieve_words(file)
-    secret_word, scrambled_word = draw_secret_word(words)
-    print(f"Scrambled word is {scrambled_word}")
-    guesses = collect_guesses()
-    check_game_result(secret_word, guesses)
+    # retrieve books
+    with open("books.json") as file:
+        books = retrieve_books(file)
+
+    # count by category
+    book_count_by_category = count_books_by_categories(books)
+
+    # calculate percentage
+    number_of_books = len(books)
+    books_percentage_rows = calculate_percentage_by_category(
+        book_count_by_category, number_of_books
+    )
+
+    # write csv
+    header = ["categoria", "percentagem"]
+    with open("report.csv", "w") as file:
+        write_csv_report(file, header, books_percentage_rows)
+
